@@ -1,0 +1,24 @@
+{
+  "name": "__PLUGIN__",
+  "title": "__TITLE__",
+  "version": "0.0.0",
+  "author": "Gabriel Dungan (DunganSoft Technologies)",
+  "author_handle": "gjdunga",
+  "description": "__DESCRIPTION__",
+  "license": "MIT",
+  "game": "rust",
+  "language": "csharp",
+  "tags": [],
+  "permissions": [],
+  "commands": [],
+  "compatibility": {
+    "oxide_minimum": "2.0.7022",
+    "oxide_verified": "2.0.7423"
+  },
+  "links": {
+    "source": "https://github.com/gjdunga/__REPO__",
+    "documentation": "https://github.com/gjdunga/__REPO__#readme",
+    "issues": "https://github.com/gjdunga/__REPO__/issues",
+    "website": "https://github.com/gjdunga/__REPO__"
+  }
+}

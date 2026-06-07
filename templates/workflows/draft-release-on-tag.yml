@@ -1,0 +1,35 @@
+name: Draft release on version tag
+
+on:
+  push:
+    tags: [ 'v*.*.*', 'V*.*.*' ]
+
+permissions:
+  contents: write
+
+jobs:
+  draft-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Stage release assets (lang files get unique, locale-suffixed names)
+        run: |
+          mkdir -p release-assets
+          cp "oxide/plugins/__PLUGIN__.cs" release-assets/
+          for dir in oxide/lang/*/; do
+            loc="$(basename "$dir")"
+            src="${dir}__PLUGIN__.json"
+            [ -f "$src" ] && cp "$src" "release-assets/__PLUGIN__-${loc}.json"
+          done
+          [ -f "oxide/config/__PLUGIN__.json" ] && cp "oxide/config/__PLUGIN__.json" "release-assets/__PLUGIN__-config.json" || true
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: __TITLE__ ${{ github.ref_name }}
+          draft: true
+          generate_release_notes: true
+          files: |
+            release-assets/__PLUGIN__.cs
+            release-assets/__PLUGIN__-*.json

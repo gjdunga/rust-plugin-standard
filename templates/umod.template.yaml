@@ -1,0 +1,11 @@
+name: __PLUGIN__
+title: __TITLE__
+version: 0.0.0
+author: Gabriel Dungan (DunganSoft Technologies)
+author_handle: gjdunga
+description: >-
+  __DESCRIPTION__
+game: rust
+language: C#
+license: MIT
+tags: []
