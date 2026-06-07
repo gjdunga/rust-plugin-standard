@@ -123,3 +123,22 @@ other rule still applies.
   `LicenseRef-DunganSoft-1.0`.
 - Note: a license change only applies to **future** versions; versions already
   published under a prior license remain under it.
+
+## 10. Cross-posting to Codefling
+
+Plugins may be listed on Codefling in addition to (free) or instead of (paid)
+umod.org.
+
+- Generate a ready-to-paste listing with
+  `python3 tools/make-listing.py .` → writes **`CODEFLING.md`** (title, tagline,
+  tags, compatibility, dependencies, permissions/commands tables, install steps,
+  "what's new" from the changelog, links, license line). Regenerate it on each
+  release so the listing tracks the plugin. `CODEFLING.md` is an optional repo
+  artifact (not enforced by the checker).
+- **Free (GPL-3.0)** plugins cross-post to Codefling as **free** listings and may
+  also stay on umod.org.
+- **Paid** plugins must use the DunganSoft EULA (§9), live in a **private** repo,
+  and are Codefling-only (an open-source license can be redistributed, so it can't
+  be meaningfully sold).
+- Before publishing a Codefling listing, add the `CODEFLING.md` TODOs: screenshots,
+  final price, and a support channel.
