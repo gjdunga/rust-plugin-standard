@@ -7,5 +7,5 @@ description: >-
   __DESCRIPTION__
 game: rust
 language: C#
-license: MIT
+license: GPL-3.0
 tags: []

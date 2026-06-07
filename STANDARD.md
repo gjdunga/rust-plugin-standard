@@ -109,3 +109,17 @@ Oxide/Rust assemblies), `draft-release-on-tag.yml` (drafts a release on a
 Set `"umod": false` for commercial-marketplace plugins (e.g. PVEDamageGuard):
 this exempts them from the Reflection ban and the author-handle rule, while every
 other rule still applies.
+
+## 9. Licensing
+
+- **Open-source plugins** (free; eligible for umod.org) are licensed **GPL-3.0**.
+  Copy `templates/LICENSE-GPL-3.0.txt` to the repo's `LICENSE`, set
+  `manifest.license` / `.umod.yaml` `license` to `GPL-3.0`, and carry a short
+  GPL notice in the plugin's source header.
+- **Paid plugins** (sold on Codefling, etc.) use the **DunganSoft Plugin
+  License** (proprietary, source-available, no redistribution) —
+  `templates/EULA.template.md`. These are **not** eligible for umod.org, should
+  live in **private** repositories, and set `manifest.license` to
+  `LicenseRef-DunganSoft-1.0`.
+- Note: a license change only applies to **future** versions; versions already
+  published under a prior license remain under it.
