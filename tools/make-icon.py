@@ -1,4 +1,4 @@
-import math
+import math, os
 from PIL import Image, ImageDraw
 
 S = 1200
@@ -46,6 +46,8 @@ toe(848, 520, 178, 272, -33)
 # main metacarpal pad: solid rounded triangle (apex up)
 d.polygon(rounded_polygon([(600, 575), (792, 905), (408, 905)], r=82), fill=INK)
 
-for size in (512, 256):
-    img.resize((size, size), Image.LANCZOS).save(f"/tmp/paw_{size}.png")
-print("ok")
+# Canonical listing icon: 512x512 wolf paw at templates/icon.png (repo-root relative
+# to this script, so it works regardless of the current working directory).
+out = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "templates", "icon.png"))
+img.resize((512, 512), Image.LANCZOS).save(out)
+print(f"wrote {out}")
