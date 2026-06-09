@@ -49,5 +49,6 @@ d.polygon(rounded_polygon([(600, 575), (792, 905), (408, 905)], r=82), fill=INK)
 # Canonical listing icon: 512x512 wolf paw at templates/icon.png (repo-root relative
 # to this script, so it works regardless of the current working directory).
 out = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "templates", "icon.png"))
+os.makedirs(os.path.dirname(out), exist_ok=True)
 img.resize((512, 512), Image.LANCZOS).save(out)
 print(f"wrote {out}")

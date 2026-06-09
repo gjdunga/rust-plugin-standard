@@ -23,8 +23,9 @@ a vendored `keys/gjdunga.asc` + `tools/sign-plugin.sh`, and a committed
 `oxide/plugins/<Plugin>.cs.asc`, with the CI signature gate green on `main`.
 
 ## Rules
-- When you change a rule or the checker here, **re-sync** the vendored
-  `tools/check-standard.py` (and any changed workflow/template) into the plugin repos.
+- When you change a rule or a vendored tool here, **re-sync** the vendored `tools/`
+  scripts — `check-standard.py`, `sign-plugin.sh`, `make-listing.py`, `make-icon.py`
+  — (and any changed workflow/template) into the plugin repos.
 - **Code signing (§11):** commits/tags are signed; each plugin's `.cs` carries a detached
   `.cs.asc` (regenerate with `tools/sign-plugin.sh` after any `.cs` change), verified in CI
   against `keys/gjdunga.asc`. The signing private key stays on the maintainer workstation.
