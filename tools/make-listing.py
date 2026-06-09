@@ -127,6 +127,19 @@ L.append("3. The plugin compiles and loads automatically; a default config is wr
          f"`oxide/config/{name}.json` on first load.")
 if deps:
     L.append("4. Install the required dependencies listed above first.")
+if std.get("signed"):
+    L.append("")
+    L.append("## Verifying the download")
+    L.append("")
+    L.append(f"This plugin is **code-signed**. Every release attaches a detached OpenPGP "
+             f"signature (`{name}.cs.asc`) and the public key (`gjdunga.asc`):")
+    L.append("")
+    L.append("```bash")
+    L.append("gpg --import gjdunga.asc   # fingerprint EAC0A2AE65CC6C9762DD6AF06877843761D5C6E6")
+    L.append(f"gpg --verify {name}.cs.asc {name}.cs")
+    L.append("```")
+    L.append("")
+    L.append('Expect: `Good signature from "Gabriel Dungan <gjdunga@gmail.com>"`.')
 if whatsnew:
     L.append("")
     L.append(f"## What's new in {ver}")
