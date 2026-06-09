@@ -14,9 +14,13 @@ This is the **source of truth** for the DunganSoft Oxide/Rust plugin portfolio:
   `.gitattributes`, `.plugin-standard.json`, `LICENSE-GPL-3.0.txt`, `EULA.template.md`,
   `CLAUDE.template.md`, doc templates, and the three workflows.
 
-## Portfolio (all free, GPL-3.0, conformant)
-bottomlesswater, ModernItemBlocker, ModernNoCupboardDecay, NitroBoostLinker (uMod=true)
-and PVEDamageGuard (uMod=false: marketplace, Carbon+Oxide, Reflection/file-IO allowed).
+## Portfolio (all free, GPL-3.0, conformant, code-signed §11)
+ModernInfoPanel, bottomlesswater, ModernItemBlocker, ModernNoCupboardDecay,
+NitroBoostLinker (uMod=true) and PVEDamageGuard (uMod=false: marketplace,
+Carbon+Oxide, Reflection/file-IO allowed).
+**All repos are signed:** each carries `"signed": true` in `.plugin-standard.json`,
+a vendored `keys/gjdunga.asc` + `tools/sign-plugin.sh`, and a committed
+`oxide/plugins/<Plugin>.cs.asc`, with the CI signature gate green on `main`.
 
 ## Rules
 - When you change a rule or the checker here, **re-sync** the vendored
